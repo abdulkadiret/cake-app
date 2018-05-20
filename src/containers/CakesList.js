@@ -1,6 +1,7 @@
 import React from "react";
 import Cake from '../components/Cake.js'
 import Search from '../components/Search.js';
+import AddCakes from '../components/AddCakes.js'
 
 class CakesList extends React.Component {
   constructor() {
@@ -48,7 +49,9 @@ class CakesList extends React.Component {
     return <div>
         <Search onChange={this.searchCake} />
         {/* <input type="text" onChange={this.searchCake} /> */}
-        <input type="text" placeholder="Add new cake" onKeyPress={this.addingNewCake} />
+        <AddCakes onKeyPress={this.addingNewCake} />
+        {/* <input type="text" placeholder="Add new cake" onKeyPress={this.addingNewCake} /> */}
+
         {/* {this.state.cakes.map(cake => {
           // return <Cake title={cake.title} desc={cake.desc} image = {cake.image}/> ......first commented
           return <Cake {...cake} />;
