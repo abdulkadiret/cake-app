@@ -40,22 +40,21 @@ class CakesList extends React.Component {
       this.allCakes.push(newCake);
       event.target.value = "";
     }
-    console.log(this.allCakes);
-    // this.setState({ cakes: this.allCakes });
+    // console.log(this.allCakes);
+    this.setState({ cakes: this.allCakes });
   };
 
   render() {
     return <div>
-        <Search onChange={this.searchCake}/>
+        <Search onChange={this.searchCake} />
         {/* <input type="text" onChange={this.searchCake} /> */}
-        <input type="text" onKeyPress={this.addingNewCake} />
+        <input type="text" placeholder="Add new cake" onKeyPress={this.addingNewCake} />
         {/* {this.state.cakes.map(cake => {
           // return <Cake title={cake.title} desc={cake.desc} image = {cake.image}/> ......first commented
           return <Cake {...cake} />;
         })} */}
 
         {this.state.cakes.map((cake, index) => {
-          // return <Cake title={cake.title} desc={cake.desc} image = {cake.image}/>
           return <Cake key={index} {...cake} />;
         })}
       </div>;
