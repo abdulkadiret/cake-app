@@ -25,7 +25,7 @@ class CakesList extends React.Component {
 
   searchCake = event => {
     const filterdCake = this.allCakes.filter(cake => {
-      const inputValue = event.target.value;
+      const inputValue = event.target.value.toLowerCase();
       if (cake.title.toLowerCase().includes(inputValue)) {
         return cake.title;
       }
